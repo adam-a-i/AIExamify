@@ -22,10 +22,11 @@
     display: inline-block;
     border-radius: 10px;
     margin-right: 20px;
-    height: 200px;
+    height: 160px;
     margin-left: 20px;
     transition-duration: 0.5s;
     max-width: 350px;
+    overflow: hidden;
 }
 .step{
     display: flex;
@@ -48,4 +49,33 @@
 }
 .card:hover{
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.158);
+    transform: scale(1.02);
+}
+
+.title,
+.explanation {
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    text-overflow: ellipsis; 
+}
+
+.arrow{
+    fill: blueviolet;
+}
+@media (max-width: 768px) {
+    .short-description {
+        font-size: 40px; /* Reduce font size for smaller screens */
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size */
+    }
+
+    .explanation {
+        font-size: 14px; /* Adjust explanation size */
+    }
+
+    .card {
+        max-width: 300px; /* Ensure the card does not overflow */
+    }
 }
