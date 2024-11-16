@@ -1,0 +1,64 @@
+body {
+    /* Lightened multi-colored gradient background */
+    background: 
+      radial-gradient(circle at top left, #fdeff9, #f9f8fb, #e9f5fc),
+      linear-gradient(135deg, #b4e5fc, #d3d1f7, #ffdce3);
+    background-blend-mode: multiply; /* Smoothly merges gradients */
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body::before {
+    /* Big grid overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px; /* Big grid size */
+    z-index: 1;
+    pointer-events: none; /* Keeps grid non-interactive */
+  }
+  
+  body::after {
+    /* Small grid inside big grids */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px; /* Small grid size */
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2; /* Ensures content is above the grids */
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  select {
+    cursor: pointer;
+  }
+  
+  input, select, button {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }

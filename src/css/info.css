@@ -1,0 +1,15 @@
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.short-description{
+    font-size: 50px;
+    color: rgb(36, 36, 112);
+    display: inline-block;
+}
+
+.card{
+}

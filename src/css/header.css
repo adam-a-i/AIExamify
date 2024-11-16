@@ -1,0 +1,59 @@
+.header{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.logo{
+    margin-left: 20px;
+}
+.name {
+    font-size: 35px;
+    font-weight: bold;
+  }
+.ai {
+    background: linear-gradient(135deg, #7fa9d6, #a29beb, #d6a6a6); /* Darker version of the gradient */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    color: transparent; /* Make the text transparent to show only the gradient */
+  }
+  
+  
+  
+  /* Style for the 'Examify' part in black */
+  .examify {
+    color: black; /* Make 'Examify' black */
+  }
+.github{
+    margin-right: 50px;
+
+}
+.github-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    border: none;
+    width: 110px;
+    height: 35px;
+    border-radius: 13px;
+    align-items: center;
+    transition-duration: 0.3s;
+    font-weight: bold;
+    font-size: 15px;
+    font-family:'Times New Roman', Times, serif;
+}
+.github-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.github-icon{
+    width: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.github-btn:hover .github-icon{
+    filter: brightness(0) invert(0);
+}
