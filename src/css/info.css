@@ -11,5 +11,41 @@
     display: inline-block;
 }
 
+.diagram{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 .card{
+    background-color: white;
+    display: inline-block;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 200px;
+    margin-left: 20px;
+    transition-duration: 0.5s;
+    max-width: 350px;
+}
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    text-align: center;
+    margin-top: 14px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(1, 1, 95);
+    margin-bottom: 15px;
+}
+.explanation{
+    padding: 10px;
+    align-items: center;
+    color: rgb(60, 60, 158);
+}
+.card:hover{
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.158);
 }

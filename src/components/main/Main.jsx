@@ -24,15 +24,16 @@ const Main = () => {
         </div>
         <div className='intro'>
             <div className='short-description'>AI Quiz Builder</div>
-            <div className='explanation'></div>
             <div className='diagram'>
                 <div className='card'>
-                    <p>First Step: Upload</p>
-                    <p>To upload a file, simply click on the "Upload" button and select a PowerPoint or DOCX file from your computer. Once you've chosen the file, confirm the upload and wait a few moments for the system to process the content.</p>
+                    <div className='step'>
+                    <p className='title'>Step 1: Upload</p>
+                    <p className='explanation'>To upload a file, simply click on the "Upload" button and select a PowerPoint or DOCX file from your computer. Once you've chosen the file, confirm the upload and wait a few moments for the system to process the content.</p> </div>
                 </div>
                 <div className='card'>
-                    <p>Second Step: Start your quiz!</p>
-                    <p>Once you start the quiz, you'll be presented with a series of questions based on the content of your uploaded file. After answering each question, you'll immediately receive feedback on your response, along with a brief explanation to help you understand the correct answer. This process will continue for all the questions, and once you finish the quiz, you'll get a summary of your results, including your overall score and a recap of your performance.</p>
+                    <div className='step'>
+                    <p className='title'>Step 2: You're all set!</p>
+                    <p className='explanation'> Start the quiz to answer questions from your uploaded file, with instant feedback and explanations. Once complete, view your results and export the quiz for future use.</p> </div>
                 </div>
             </div>
         </div>
