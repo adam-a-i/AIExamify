@@ -12,6 +12,7 @@
     background: linear-gradient(135deg, #0e74db, #2519a3, #ad3d3d); /* Darker version of the gradient */
     -webkit-background-clip: text; /* Clip the gradient to the text */
     color: transparent; /* Make the text transparent to show only the gradient */
+    font-family: "Playfair", serif;
 }
 
 .diagram{
