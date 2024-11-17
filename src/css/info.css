@@ -9,6 +9,9 @@
     font-size: 50px;
     color: rgb(36, 36, 112);
     display: inline-block;
+    background: linear-gradient(135deg, #0e74db, #2519a3, #ad3d3d); /* Darker version of the gradient */
+    -webkit-background-clip: text; /* Clip the gradient to the text */
+    color: transparent; /* Make the text transparent to show only the gradient */
 }
 
 .diagram{
@@ -60,7 +63,7 @@
 }
 
 .arrow{
-    fill: blueviolet;
+    width: 30px;
 }
 @media (max-width: 768px) {
     .short-description {
