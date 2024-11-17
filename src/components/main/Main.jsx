@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from '../../assets/github.png'
 import arrow from '../../assets/arrow.png'
-import upload from '../../assets/UploadIcon.jsx'
 import UploadIcon from '../../assets/UploadIcon.jsx'
 const Main = () => {
   return (

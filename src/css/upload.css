@@ -1,12 +1,15 @@
+
 .upload-area{
     margin-top: 7%;
     background-color: white;
-    margin: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 30px;
 }
 .help{
     margin-top: 20px;

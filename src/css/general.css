@@ -5,7 +5,7 @@ body {
       linear-gradient(135deg, #b4e5fc, #bebbfc, #f8aab9);
     background-blend-mode: multiply; /* Smoothly merges gradients */
     background-size: cover;
-    height: 100vh;
+    height: 140vh;
     margin: 0;
     font-family: Arial, sans-serif;
   }
@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: inherit;
     background: 
       linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
@@ -33,7 +33,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: inherit;
     background: 
       linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
