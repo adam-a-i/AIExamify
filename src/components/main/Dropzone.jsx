@@ -9,8 +9,14 @@ const Dropzone = () => {
       [],
     )
     
-    const {getRootProps, getInputProps} = useDropzone({onDrop,
-        multiple: false //so user cannot upload multiple files, takes latest
+    const {getRootProps, getInputProps, isDragAccept, isDragReject} = useDropzone({onDrop,
+        multiple: false, //so user cannot upload multiple files, takes latest
+        accept: {
+            'audio/mpeg': ['.mp3'],   // For MP3 files
+            'application/pdf': ['.pdf'], // For PDFs
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'], // For DOCX
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation': ['.pptx'], // For PPTX
+          }
     })
   return (
     <div>
@@ -18,8 +24,13 @@ const Dropzone = () => {
         <div>
             <div className='upload'  {...getRootProps()}>
                 <input {...getInputProps()}/>
-                <UploadIcon />
-                <p className='upload-text'> Drag a document here or click to browse</p>
+                {
+                    isDragAccept ? <p className='upload-text'>😊 Drop it here</p>:
+                    <div className='upload-wrapper'>
+                    <UploadIcon />
+                    <p className='upload-text'> Drag a document here or click to browse</p></div>
+                }
+                
             </div>
         </div>
     </div>
