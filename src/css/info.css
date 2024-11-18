@@ -29,7 +29,7 @@
     height: 160px;
     margin-left: 20px;
     transition-duration: 0.5s;
-    max-width: 350px;
+    max-width: 550px;
     overflow: hidden;
 }
 .step{
@@ -64,7 +64,7 @@
 }
 
 .arrow{
-    width: 30px;
+    width: 60px;
 }
 @media (max-width: 768px) {
     .short-description {
