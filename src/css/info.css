@@ -21,16 +21,32 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.card{
+.card {
     background-color: white;
     display: inline-block;
     border-radius: 10px;
     margin-right: 20px;
-    height: 160px;
     margin-left: 20px;
-    transition-duration: 0.5s;
+    height: auto; /* Allow height to adjust based on content */
     max-width: 350px;
+    width: 100%; /* Make the card width responsive */
+    transition-duration: 0.5s;
     overflow: hidden;
+}
+
+/* Optional: Use a media query to increase the card's size at larger screens */
+@media (min-width: 768px) {
+    .card {
+        max-width: 500px; /* Increase max-width on larger screens */
+        height: 180px; /* Optionally increase height for bigger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        max-width: 600px; /* Further increase max-width on even larger screens */
+        height: 200px; /* Adjust height again for larger screens */
+    }
 }
 .step{
     display: flex;

@@ -10,6 +10,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 30px;
+    height: 60vh;
 }
 .help{
     margin-top: 20px;
@@ -34,6 +35,7 @@
     height: 50vh;
     margin-bottom: 40px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .upload-icon {
