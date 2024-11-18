@@ -1,6 +1,9 @@
 import React, { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import UploadIcon from '../../assets/UploadIcon.jsx'
+// NEXT WE WANT TO MAKE IT SO THAT WE UPLOAD A FILE
+// THEN WE TAKE THIS FILE AND EXTRACT THE TEXT FROM IT USING A LIBRARY
+//THEN WE PASS THIS FILE THROUGH AN API
 const Dropzone = () => {
     const onDrop = useCallback(
       (acceptedFiles) => { // files uploaded found here
@@ -25,6 +28,7 @@ const Dropzone = () => {
             <div className='upload'  {...getRootProps()}>
                 <input {...getInputProps()}/>
                 {
+                    //interactivity for dragging file into box
                     isDragAccept ? <p className='upload-text'>😊 Drop it here</p>:
                     <div className='upload-wrapper'>
                     <UploadIcon />
