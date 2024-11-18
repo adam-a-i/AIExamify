@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../assets/github.png'
 import arrow from '../../assets/arrow.png'
-import UploadIcon from '../../assets/UploadIcon.jsx'
+import Dropzone from './Dropzone.jsx'
 const Main = () => {
   return (
     <div className='page'>
@@ -47,11 +47,7 @@ const Main = () => {
             </div>
         </div>
         <div className='upload-area'>
-            <p className='help'>Try it out by uploading a screenshot, photo, or entering your text content below. It even works with handwritten content.</p>
-            <div className='upload'>
-                <UploadIcon />
-                <p className='upload-text'> Drag a document here or click to browse</p>
-            </div>
+            <Dropzone/>
         </div>
     </div>
   )

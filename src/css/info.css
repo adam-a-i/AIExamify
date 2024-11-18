@@ -27,15 +27,8 @@
     border-radius: 10px;
     margin-right: 20px;
     margin-left: 20px;
-<<<<<<< HEAD
-    height: auto; /* Allow height to adjust based on content */
-    max-width: 350px;
-    width: 100%; /* Make the card width responsive */
-    transition-duration: 0.5s;
-=======
     transition-duration: 0.5s;
     max-width: 550px;
->>>>>>> 29d940b5303410e486da18cb339aa89b3d0053d9
     overflow: hidden;
 }
 
