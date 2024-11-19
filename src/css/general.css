@@ -1,7 +1,7 @@
 body {
     /* Lightened multi-colored gradient background */
     background: 
-      radial-gradient(circle at top left, #fdeff9, #ddd8e7, #83c0e4),
+      radial-gradient(circle at top left, #fdeff9, #e4d8e7, #eed1e7),
       linear-gradient(135deg, #b4e5fc, #bebbfc, #f8aab9);
     background-blend-mode: multiply; /* Smoothly merges gradients */
     background-size: cover;
