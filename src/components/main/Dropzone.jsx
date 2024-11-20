@@ -45,7 +45,7 @@ const Dropzone = () => {
         </div>
         {
           //modal insertion
-          FileAccept && <Modal fileInfo={fileInfo}/>
+          FileAccept && <Modal fileInfo={fileInfo} closeModal={ () => setFileAccept(false)} />
         }   
     </div>
   )
