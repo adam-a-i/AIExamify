@@ -61,9 +61,10 @@ body.active-modal {
 }
 
 .options{
+    font-family: Quicksand;
     color: rgb(38, 38, 129);
     font-size: 20px;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 .close{
@@ -83,6 +84,7 @@ body.active-modal {
 }
 
 .quiz-options{
+    font-family: Quicksand;
     display: flex;
     align-items:start;
     justify-content: space-evenly;
