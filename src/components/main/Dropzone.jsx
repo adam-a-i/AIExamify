@@ -1,15 +1,18 @@
 import React, { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import UploadIcon from '../../assets/UploadIcon.jsx'
+import Modal from './Modal.jsx'
 // NEXT WE WANT TO MAKE IT SO THAT WE UPLOAD A FILE
 // THEN WE TAKE THIS FILE AND EXTRACT THE TEXT FROM IT USING A LIBRARY
 //THEN WE PASS THIS FILE THROUGH AN API
 const Dropzone = () => {
+    const [fileInfo, setFileInfo] = useState(null);
     const [FileAccept, setFileAccept] = useState(false);
     const onDrop = useCallback(
       (acceptedFiles) => { // files uploaded found here
+        setFileInfo(acceptedFiles);
         console.log(acceptedFiles);
-         setFileAccept(true);
+         setFileAccept(!FileAccept);
         console.log(FileAccept);},
       [],
     )
@@ -24,11 +27,6 @@ const Dropzone = () => {
           }
     })
 
-  if(FileAccept){
-    return(
-      <div>ads</div>
-    );
-  }
   return (
     <div>
         <p className='help'>Try it out by uploading a screenshot, photo, or entering your text content below. It even works with handwritten content.</p>
@@ -41,9 +39,14 @@ const Dropzone = () => {
                     <div className='upload-wrapper'>
                     <UploadIcon />
                     <p className='upload-text'> Drag a document here or click to browse</p></div>
-}               
+                }
+            
             </div>
         </div>
+        {
+          //modal insertion
+          FileAccept && <Modal fileInfo={fileInfo}/>
+        }   
     </div>
   )
 }
