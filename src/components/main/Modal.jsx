@@ -5,16 +5,22 @@ const Modal = ({fileInfo}) => {
     <div className="modal">
         <div className='overlay'>
             <div className="modal-content">
-                <div className="header">
+                <div className="headerm">
                 <p className="options">Options</p>
                 <button className='close'><p className='x'>X</p></button>
                 </div>
                 
-                <div className="file">
-                        <p>File {fileInfo[0].name}</p>
+                <div className="quiz-options">
+                <div className="quiz-options">
+                <div className="file-info">
+                    <p className="filename">File:</p>
+                    <p className="file-path">{fileInfo[0].name}</p>
                 </div>
                 <p># of questions</p>
                 <p>Pick a difficulty</p>
+                </div>
+                </div>
+
             </div>
         </div>
     </div>
