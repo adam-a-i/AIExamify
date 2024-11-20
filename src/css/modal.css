@@ -145,6 +145,7 @@ body.active-modal {
     border-radius: 10px;
     font-size: 15px;
     transition-duration: 0.5s;
+    font-weight: bold;
 }
 
 .cancel:hover{
@@ -152,6 +153,8 @@ body.active-modal {
 }
 
 .create{
+    font-weight: bold;
+    font-family: Quicksand, sans-serif;
     border: none;
     background-color: #0f5bff;
     border-style: solid;

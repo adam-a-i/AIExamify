@@ -29,6 +29,7 @@
 
 }
 .github-btn{
+    font-family: Quicksand, sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -42,7 +43,6 @@
     transition-duration: 0.3s;
     font-weight: bold;
     font-size: 15px;
-    font-family:'Times New Roman', Times, serif;
 }
 .github-btn:hover{
     background-color: white;
