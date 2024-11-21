@@ -33,12 +33,14 @@ body.active-modal {
     line-height: 1.4;
     background: #f1f1f1;
     border-radius: 3px;
-    max-width: 2000px;
-    min-width: 500px;
-    width: 50%;
+    max-width: 500px;
+    min-width: 200px;
+    width: 90%;
     pointer-events: auto;
     border-radius: 15px;
-    height: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .headerm{
@@ -142,12 +144,13 @@ body.active-modal {
     border-width: 2px;
     width: 100px;
     margin-left: 40px;
-    margin-top: 30px;
+    margin-top: 10px;
     height: 30px;
     border-radius: 10px;
     font-size: 15px;
     transition-duration: 0.5s;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .cancel:hover{
@@ -164,11 +167,12 @@ body.active-modal {
     border-width: 2px;
     width: 100px;
     margin-right: 40px;
-    margin-top: 30px;
+    margin-top: 10px;
     height: 35px;
     border-radius: 10px;
     font-size: 15px;
     transition-duration: 0.5s;
+    margin-bottom: 10px;
 }
 
 .create:hover{
