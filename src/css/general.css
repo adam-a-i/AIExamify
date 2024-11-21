@@ -1,4 +1,5 @@
 body {
+    font-family: Quicksand;
     /* Lightened multi-colored gradient background */
     background: 
       radial-gradient(circle at top left, #fdeff9, #e4d8e7, #eed1e7),
@@ -60,5 +61,5 @@ body {
   }
   
   input, select, button {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Quicksand, sans-serif;
   }
