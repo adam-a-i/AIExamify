@@ -40,7 +40,7 @@ const Modal = ({fileInfo, closeModal}) => {
 
                 </div>
                 <div className="footerm">
-                <button className='cancel'>Cancel</button>
+                <button className='cancel' onClick={closeModal}>Cancel</button>
                 <button className='create'> Create</button>
                 </div>
             </div>
