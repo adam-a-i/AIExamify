@@ -3,6 +3,7 @@ import '../../css/modal.css'
 import mammoth from 'mammoth'
 import { useState } from 'react'
 import {convert} from 'html-to-text'
+import { removeImageTags } from './utils'
 
 const Modal = ({fileInfo, closeModal}) => {
     const [text, setText] = useState('');
@@ -36,9 +37,7 @@ const Modal = ({fileInfo, closeModal}) => {
       }
     };
     
-    function removeImageTags(inputString) {
-        return inputString.replace(/<img[^>]*>/g, ''); // This removes all <img> tags and their contents
-    }
+
 
   return (
     <div className="modal">
