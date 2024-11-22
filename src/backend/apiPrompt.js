@@ -1,7 +1,9 @@
-const Groq = require('groq-sdk');
+import Groq from "groq-sdk";
+import dotenv from 'dotenv';
+dotenv.config();  // This loads the variables from the .env file
 
-const groq = new Groq();
-export async function main() {
+const groq = new Groq({apiKey: process.env.GROQ_API_KEY})
+async function main() {
   const chatCompletion = await groq.chat.completions.create({
     "messages": [
       {
@@ -29,3 +31,5 @@ export async function main() {
     process.stdout.write(chunk.choices[0]?.delta?.content || '');
   }
 }
+
+main();

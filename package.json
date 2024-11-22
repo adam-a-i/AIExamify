@@ -12,6 +12,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "groq": "^3.64.3",
+    "groq-sdk": "^0.8.0",
     "html-to-text": "^9.0.5",
     "mammoth": "^1.8.0",
     "openai": "^4.73.0",
