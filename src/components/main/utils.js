@@ -1,5 +1,6 @@
 import mammoth from "mammoth";
 import { convert } from "html-to-text";
+import { main } from '../../backend/apiPrompt.js';
 export function removeImageTags(inputString) {
     return inputString.replace(/<img[^>]*>/g, ''); // This removes all <img> tags and their contents
 }
