@@ -2,13 +2,15 @@ import Groq from "groq-sdk";
 import dotenv from 'dotenv';
 dotenv.config();  // This loads the variables from the .env file
 
+console.log(process.env.GROQ_API_KEY);
+
 const groq = new Groq({apiKey: process.env.GROQ_API_KEY})
 async function main() {
   const chatCompletion = await groq.chat.completions.create({
     "messages": [
       {
         "role": "system",
-        "content": `You are a quiz generator. Based on the text provided below, please create a quiz with ${numberOfQs} multiple-choice questions. Each question should have 4 options, and one of them should be the correct answer. Return the output in JSON format with the following structure:\n\n{\n  \"quiz\": [\n    {\n      \"question\": \"The question text here\",\n      \"options\": [\n        \"Option 1\",\n        \"Option 2\",\n        \"Option 3\",\n        \"Option 4\"\n      ],\n      \"correct_answer\": \"The correct option\"\n    },\n    {\n      \"question\": \"Next question text\",\n      \"options\": [\n        \"Option 1\",\n        \"Option 2\",\n        \"Option 3\",\n        \"Option 4\"\n      ],\n      \"correct_answer\": \"The correct option\"\n    }\n  ]\n}\n\nTEXT: ${text}`
+        "content": `You are a quiz generator. Based on the text provided below, please create a quiz with multiple-choice questions. Each question should have 4 options, and one of them should be the correct answer. Return the output in JSON format with the following structure:\n\n{\n  \"quiz\": [\n    {\n      \"question\": \"The question text here\",\n      \"options\": [\n        \"Option 1\",\n        \"Option 2\",\n        \"Option 3\",\n        \"Option 4\"\n      ],\n      \"correct_answer\": \"The correct option\"\n    },\n    {\n      \"question\": \"Next question text\",\n      \"options\": [\n        \"Option 1\",\n        \"Option 2\",\n        \"Option 3\",\n        \"Option 4\"\n      ],\n      \"correct_answer\": \"The correct option\"\n    }\n  ]\n}\n\nTEXT: operating systems`
       },
     ],
     "model": "llama3-70b-8192",
