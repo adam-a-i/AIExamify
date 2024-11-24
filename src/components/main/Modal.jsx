@@ -1,17 +1,32 @@
 import React from 'react'
 import '../../css/modal.css'
-import mammoth from 'mammoth'
 import { useState } from 'react'
-import {convert} from 'html-to-text'
 import {txt } from './utils'
+import { BounceLoader } from 'react-spinners';
+
 
 const Modal = ({fileInfo, closeModal}) => {
     const [text, setText] = useState('');
-
+    const [loading, setLoading] = useState(false);
     const handleGenerateText = () => {
-      txt(fileInfo, setText); 
+       setLoading(true);
+      txt(fileInfo, setText, setLoading); 
     };
 
+    if(loading){
+        return (
+            <>
+            <div className='overlayL'>              </div>
+            <div className="loading">
+              <BounceLoader
+                color="#0950ec"
+                speedMultiplier={1.2}
+              />
+
+            </div>
+            </>
+          );
+    }
   return (
     <div className="modal">
         <div className='overlay'>

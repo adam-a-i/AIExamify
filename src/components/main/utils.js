@@ -4,9 +4,7 @@ export function removeImageTags(inputString) {
     return inputString.replace(/<img[^>]*>/g, ''); // This removes all <img> tags and their contents
 }
 
-
-
-export const txt = async (fileInfo, setText) => {
+export const txt = async (fileInfo, setText, setLoading) => {
   const file = fileInfo[0];
   if (file) {
     const reader = new FileReader();
@@ -29,6 +27,11 @@ export const txt = async (fileInfo, setText) => {
         console.log('Quiz Output:', data.quiz);
       } catch (error) {
         console.error('Error processing file:', error);
+      } finally{
+          // implement set interval here just to ensure that everything goes right and to have loading screen for longer
+          setTimeout(()=>{
+            setLoading(false);
+          }, 5000)
       }
     };
     reader.readAsArrayBuffer(file);

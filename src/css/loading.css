@@ -1,0 +1,33 @@
+body.active-modal {
+    overflow-y: hidden; /* Prevents vertical scrolling */
+  }
+  
+  .overlayL {
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    background: rgba(49, 49, 49, 0.8); /* Semi-transparent dark background */
+    position: fixed; /* Ensure it covers the screen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999; /* Ensure it's above other content */
+    pointer-events: none; /* Allow interaction with elements underneath */
+  }
+  
+  .loading {
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    position: fixed; /* Fixed position to stay in the viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it */
+    z-index: 1000; /* Ensure it's above the overlay */
+  }
+  
