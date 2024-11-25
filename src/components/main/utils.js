@@ -31,7 +31,7 @@ export const txt = async (fileInfo, setText, setLoading) => {
           // implement set interval here just to ensure that everything goes right and to have loading screen for longer
           setTimeout(()=>{
             setLoading(false);
-          }, 5000)
+          }, 9000)
       }
     };
     reader.readAsArrayBuffer(file);

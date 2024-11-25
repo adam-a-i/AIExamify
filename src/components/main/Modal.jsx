@@ -3,7 +3,7 @@ import '../../css/modal.css'
 import { useState } from 'react'
 import {txt } from './utils'
 import { BounceLoader } from 'react-spinners';
-
+import Typewriter from 'typewriter-effect';
 
 const Modal = ({fileInfo, closeModal}) => {
     const [text, setText] = useState('');
@@ -13,20 +13,44 @@ const Modal = ({fileInfo, closeModal}) => {
       txt(fileInfo, setText, setLoading); 
     };
 
-    if(loading){
-        return (
-            <>
-            <div className='overlayL'>              </div>
-            <div className="loading">
-              <BounceLoader
-                color="#0950ec"
-                speedMultiplier={1.2}
-              />
-
-            </div>
-            </>
-          );
+    if (loading) {
+      return (
+        <>
+          <div className="loading">
+            <div className='typewriter'>
+            <Typewriter
+            className='typewriter'
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString('Analyzing...')
+                  .callFunction(() => {
+                    console.log('String typed out!');
+                  })
+                  .deleteAll()
+                  .pauseFor(1000)
+                  .typeString('Generating...')
+                  .callFunction(() => {
+                    console.log('String typed out!');
+                  })
+                  .deleteAll()
+                  .typeString('Loading...')
+                  .callFunction(() => {
+                    console.log('String typed out!');
+                  })
+                  .deleteAll()
+                  .start();
+              }}
+            /></div>
+            <BounceLoader
+              color="#0950ec"
+              speedMultiplier={1.2}
+            />
+          </div>
+          <div className="overlayL" />
+        </>
+      );
     }
+    
   return (
     <div className="modal">
         <div className='overlay'>

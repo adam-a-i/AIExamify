@@ -18,16 +18,29 @@ body.active-modal {
   .loading {
     margin: 100px auto 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    width: 200px;
+    width: 400px;
     height: 200px;
     border-radius: 16px;
     position: fixed; /* Fixed position to stay in the viewport */
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%); /* Center it */
     z-index: 1000; /* Ensure it's above the overlay */
   }
+
+  .Typewriter__wrapper {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: #022a80;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  
   
