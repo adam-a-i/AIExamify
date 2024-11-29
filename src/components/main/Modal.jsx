@@ -13,7 +13,7 @@ const Modal = ({fileInfo, closeModal}) => {
       txt(fileInfo, setText, setLoading); 
     };
 
-    if (loading) {
+    if (loading) { //loading screen
       return (
         <>
           <div className="loading">
