@@ -1,11 +1,37 @@
+* {
+    box-sizing: border-box; /* Ensures that padding and borders don't affect width calculations */
+  }
 
-.questionText{
+  .questionText {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    margin: 20px;
+    background-color: rgb(247, 247, 247);
+    margin: 10px;
+    margin-right: 10px;
     border-radius: 10px;
     padding: 30px;
     justify-content: space-evenly;
-    align-items:flex-start;
-}
+    width: 100%; /* Full width of the parent */
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure options div takes full width */
+  }
+  
+  .option {
+    width: 100%; /* Ensure each option fills the parent container */
+    padding: 15px; /* Increase padding for better spacing */
+    margin: 5px 0; /* Adjust margin for spacing */
+    background-color: rgb(150, 180, 235);
+    border-radius: 18px;
+    text-align: start; /* Center the text inside the option */
+    color: black;
+  }
+  
+  .options-text {
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+  }
+  
