@@ -34,7 +34,7 @@ export const txt = async (setQuiz, fileInfo, setText, setLoading,navigate) => {
           setTimeout(()=>{
             setLoading(false);
             navigate('/quiz');//navigating to quiz page after the 9 seconds complete
-          }, 9000)
+          }, 2000)
 
       }
     };
