@@ -5,7 +5,7 @@ import Modal from './Modal.jsx'
 // NEXT WE WANT TO MAKE IT SO THAT WE UPLOAD A FILE
 // THEN WE TAKE THIS FILE AND EXTRACT THE TEXT FROM IT USING A LIBRARY
 //THEN WE PASS THIS FILE THROUGH AN API
-const Dropzone = () => {
+const Dropzone = ({setQuiz}) => {
     const [fileInfo, setFileInfo] = useState(null);
     const [FileAccept, setFileAccept] = useState(false);
     const onDrop = useCallback(
@@ -45,7 +45,7 @@ const Dropzone = () => {
         </div>
         {
           //modal insertion
-          FileAccept && <Modal fileInfo={fileInfo} closeModal={ () => setFileAccept(false)} />
+          FileAccept && <Modal setQuiz={setQuiz} fileInfo={fileInfo} closeModal={ () => setFileAccept(false)} />
         }   
     </div>
   )

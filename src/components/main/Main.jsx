@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../../assets/github.png'
 import arrow from '../../assets/arrow.png'
 import Dropzone from './Dropzone.jsx'
-const Main = () => {
+const Main = ({setQuiz}) => {
   return (
     <div className='page'>
         <div className='header'>
@@ -47,7 +47,7 @@ const Main = () => {
             </div>
         </div>
         <div className='upload-area'>
-            <Dropzone/>
+            <Dropzone setQuiz={setQuiz}/>
         </div>
     </div>
   )

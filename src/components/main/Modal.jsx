@@ -4,13 +4,15 @@ import { useState } from 'react'
 import {txt } from './utils'
 import { BounceLoader } from 'react-spinners';
 import Typewriter from 'typewriter-effect';
+import { useNavigate } from 'react-router-dom';
 
-const Modal = ({fileInfo, closeModal}) => {
+const Modal = ({fileInfo, closeModal, setQuiz}) => {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const handleGenerateText = () => {
        setLoading(true);
-      txt(fileInfo, setText, setLoading); 
+      txt(setQuiz, fileInfo, setText, setLoading, navigate); 
     };
 
     if (loading) { //loading screen
