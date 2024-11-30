@@ -15,10 +15,10 @@ const QuizPage = ({ quiz }) => {
                 {question.options.map((option, idx) => {
                   return (
                     <div key={idx} className="option">
-                      {idx===0 && (<p>A</p>)}
-                      {idx===1 && (<p>B</p>)} 
-                      {idx===2 && (<p>C</p>)} 
-                      {idx===3 && (<p>D</p>)} 
+                      {idx===0 && (<div className='alphabet'>A</div>)}
+                      {idx===1 && (<div className='alphabet'>B</div>)} 
+                      {idx===2 && (<div className='alphabet'>C</div>)} 
+                      {idx===3 && (<div className='alphabet'>D</div>)} 
                       <p className='options-text'>{option}</p>
                     </div>
                   );

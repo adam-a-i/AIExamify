@@ -11,7 +11,7 @@
     border-radius: 10px;
     padding: 30px;
     justify-content: space-evenly;
-    width: 100%; /* Full width of the parent */
+    width: calc(100% -20px);
   }
   
   .options {
@@ -21,13 +21,22 @@
   }
   
   .option {
+    display: flex;
+    justify-content: start;
+    align-items: center;
     width: 100%; /* Ensure each option fills the parent container */
     padding: 15px; /* Increase padding for better spacing */
     margin: 5px 0; /* Adjust margin for spacing */
-    background-color: rgb(150, 180, 235);
+    background-color: rgb(168, 191, 235);
     border-radius: 18px;
     text-align: start; /* Center the text inside the option */
     color: black;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+  
+  .option:hover{
+    background-color: rgb(146, 178, 238);
   }
   
   .options-text {
@@ -35,3 +44,15 @@
     font-size: 17px;
   }
   
+  .alphabet{
+    margin-right: 20px;
+    display: inline-block;
+    color: black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: white;
+    line-height: 30px;
+
+  }
