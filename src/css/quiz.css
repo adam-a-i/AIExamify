@@ -56,3 +56,32 @@
     line-height: 30px;
 
   }
+
+  .check{
+    margin-top: 30px;
+    align-self: flex-end;
+    align-items: center;
+    font-weight: bold;
+    font-family: Quicksand, sans-serif;
+    border: none;
+    background-color: #0f5bff;
+    border-style: solid;
+    color: white;
+    border-width: 2px;
+    width: 100px;
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition-duration: 0.5s;
+    margin-bottom: 10px;
+  }
+
+  .check:hover{
+    background-color: #0d4fdf;;
+}
+
+.timer-wrapper{
+  align-self: flex-end;
+  width: 40px;
+}
