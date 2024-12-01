@@ -11,7 +11,7 @@
     border-radius: 10px;
     padding: 30px;
     justify-content: space-evenly;
-    width: calc(100% -20px);
+    width: calc(70% -20px);
   }
   
   .options {
@@ -84,4 +84,8 @@
 .timer-wrapper{
   align-self: flex-end;
   width: 40px;
+}
+.name{
+  margin: 20px;
+
 }

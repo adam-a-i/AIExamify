@@ -15,7 +15,10 @@ const QuizPage = ({ quiz }) => {
 
   return (
     <div className="quiz">
-      <h1>Generated Quiz</h1>
+      <p className='name'>
+                <span className='ai'>AI</span>
+                <span className='examify'>Examify</span>
+            </p>
       <div className="question">
         {quiz.quiz?.map((question, index) => { // ensure quiz.quiz is defined
           return (
