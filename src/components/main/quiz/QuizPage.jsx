@@ -4,7 +4,8 @@ import Timer from '../../../assets/timer';
 const QuizPage = ({ quiz }) => {  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   
-
+  const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
+  
   const handleQuestionChange = () =>{
     if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
   }
@@ -20,10 +21,7 @@ const QuizPage = ({ quiz }) => {
                 <span className='examify'>Examify</span>
             </p>
       <div className="question">
-        {quiz.quiz?.map((question, index) => { // ensure quiz.quiz is defined
-          return (
-            <>
-            <div key={index} className="questionText">
+            <div className="questionText">
             <div className='timer-wrapper'>
               <Timer/>
             </div>
@@ -44,9 +42,6 @@ const QuizPage = ({ quiz }) => {
               </div>
               <p>Correct Answer: {question.correct_answer}</p>
             </div>
-            </>
-          );
-        })}
       </div>
     </div>
   );
