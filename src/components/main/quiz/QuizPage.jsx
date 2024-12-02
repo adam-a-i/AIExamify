@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Timer from '../../../assets/timer';
 const QuizPage = ({ quiz }) => {  
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
   
   const handleQuestionChange = () =>{
@@ -11,7 +11,15 @@ const QuizPage = ({ quiz }) => {
   }
 
   const checkAnswer = () => {
-    console.log("hi");
+    console.log(selectedAnswer.option);
+    console.log(question.correct_answer);
+    if(question.correct_answer == selectedAnswer.option){
+      console.log("correct!");
+    }
+    else{
+      console.log("falsdee");
+      
+    }
   }
 
   return (
@@ -31,7 +39,7 @@ const QuizPage = ({ quiz }) => {
               <div className="options">
                 {question.options.map((option, idx) => {
                   return (
-                    <div key={idx} className="option">
+                    <div key={idx} className="option" onClick={() => setSelectedAnswer({option})}>
                       {idx===0 && (<div className='alphabet'>A</div>)}
                       {idx===1 && (<div className='alphabet'>B</div>)} 
                       {idx===2 && (<div className='alphabet'>C</div>)} 

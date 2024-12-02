@@ -109,3 +109,7 @@ hr {
   width: 100%; /* Full width */
   margin: 30px 0; /* Spacing above and below */
 }
+.option.selected {
+  background-color: lightgreen; /* Add color or styling for selected option */
+}
+
