@@ -4,16 +4,16 @@ import Timer from '../../../assets/timer';
 const QuizPage = ({ quiz }) => {  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [time, setTime] = useState(0);
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
-  
   const handleQuestionChange = () =>{
     if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
   }
 
   const checkAnswer = () => {
-    console.log(selectedAnswer.option);
+    console.log(selectedAnswer);
     console.log(question.correct_answer);
-    if(question.correct_answer == selectedAnswer.option){
+    if(question.correct_answer == selectedAnswer){
       console.log("correct!");
     }
     else{
@@ -33,13 +33,20 @@ const QuizPage = ({ quiz }) => {
             <div className="question">
             <div className="questionText">
             <div className='timer-wrapper'>
+              <p className='time'>
+                {
+                  time
+                }
+              </p>
               <Timer/>
             </div>
               <h3>{question.question}</h3>
               <div className="options">
                 {question.options.map((option, idx) => {
                   return (
-                    <div key={idx} className="option" onClick={() => setSelectedAnswer({option})}>
+                    <div key={idx} 
+                    className={`option ${selectedAnswer === option ? 'option-selected' : ''}`}
+                     onClick={() => setSelectedAnswer(option)}>
                       {idx===0 && (<div className='alphabet'>A</div>)}
                       {idx===1 && (<div className='alphabet'>B</div>)} 
                       {idx===2 && (<div className='alphabet'>C</div>)} 
