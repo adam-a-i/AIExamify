@@ -16,11 +16,13 @@ const QuizPage = ({ quiz }) => {
 
   return (
     <div className="quiz">
+      <div className="logo">
       <p className='name'>
                 <span className='ai'>AI</span>
                 <span className='examify'>Examify</span>
             </p>
-      <div className="question">
+            </div>
+            <div className="question">
             <div className="questionText">
             <div className='timer-wrapper'>
               <Timer/>
@@ -38,12 +40,13 @@ const QuizPage = ({ quiz }) => {
                     </div>
                   );
                 })}
+                <hr />
                 <button className='check' onClick={() => checkAnswer()}> Check </button>
               </div>
               <p>Correct Answer: {question.correct_answer}</p>
             </div>
-      </div>
-    </div>
+            </div>
+            </div>
   );
 };
   
