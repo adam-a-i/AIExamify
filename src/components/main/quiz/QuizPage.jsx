@@ -75,9 +75,10 @@ const QuizPage = ({ quiz }) => {
                 <div className="footer">
               {explain && (
                 <div className="explanation">
-              <p>Explanation :0 </p> 
-              <p>
-              {question.explanation}</p>
+                  <div className="exp">
+              <div>Explanation :0 </div> 
+              <div>
+              {question.explanation}</div></div>
               <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
             )}
               </div>

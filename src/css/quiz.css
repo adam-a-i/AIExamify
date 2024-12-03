@@ -135,8 +135,16 @@ hr {
   margin-top: 10px; /* Add spacing from the top */
 }
 
-
 .explanation{
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  width: 100%; 
 }
 
+.exp {
+  display: flex;
+  flex-direction: column; 
+  padding: 10px; 
+  width: 70%; 
+}
