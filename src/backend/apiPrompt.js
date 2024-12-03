@@ -22,7 +22,37 @@ app.post('/generate-quiz', async (req, res) => {
       messages: [
         {
           role: 'system',
-          content: `DO NOT PROVIDED ANYTHING ELSE OTHER THAN JSON You are a quiz generator. Based on the text provided below, please create a quiz with multiple-choice questions. Each question should have 4 options, and one of them should be the correct answer. Return the output in JSON format NOT STRING with the following structure:\n\n{\n  "quiz": [\n    {\n      "question": "The question text here",\n      "options": [\n        "Option 1",\n        "Option 2",\n        "Option 3",\n        "Option 4"\n      ],\n      "correct_answer": "The correct option"\n    },\n    {\n      "question": "Next question text",\n      "options": [\n        "Option 1",\n        "Option 2",\n        "Option 3",\n        "Option 4"\n      ],\n      "correct_answer": "The correct option"\n    }\n  ]\n}\n\nTEXT: ${inputText}`,
+          content: `DO NOT PROVIDE ANYTHING ELSE OTHER THAN JSON. You are a quiz generator. Based on the text provided below, please create a quiz with multiple-choice questions. Each question should have 4 options, and one of them should be the correct answer. Additionally, provide an explanation for why the correct answer is correct. Return the output in JSON format NOT STRING with the following structure:
+
+{
+  "quiz": [
+    {
+      "question": "The question text here",
+      "options": [
+        "Option 1",
+        "Option 2",
+        "Option 3",
+        "Option 4"
+      ],
+      "correct_answer": "The correct option",
+      "explanation": "Explanation for why this answer is correct."
+    },
+    {
+      "question": "Next question text",
+      "options": [
+        "Option 1",
+        "Option 2",
+        "Option 3",
+        "Option 4"
+      ],
+      "correct_answer": "The correct option",
+      "explanation": "Explanation for why this answer is correct."
+    }
+  ]
+}
+
+TEXT: ${inputText}`
+,
         },
       ],
       model: 'llama3-70b-8192',

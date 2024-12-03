@@ -126,4 +126,10 @@ hr {
   align-items: center;
 }
 
+.footer{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
 

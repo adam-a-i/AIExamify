@@ -5,12 +5,14 @@ const QuizPage = ({ quiz }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [time, setTime] = useState(0);
+  const [explain, setExplain] = useState(false);
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
   const handleQuestionChange = () =>{
     if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
   }
 
   const checkAnswer = () => {
+    setExplain(true);
     console.log(selectedAnswer);
     console.log(question.correct_answer);
     if(question.correct_answer == selectedAnswer){
@@ -67,9 +69,14 @@ const QuizPage = ({ quiz }) => {
                   );
                 })}
                 <hr />
+                <div className="footer">
                 <button className='check' onClick={() => checkAnswer()}> Check </button>
               </div>
-              <p>Correct Answer: {question.correct_answer}</p>
+              {explain && (
+                <div className="explanation">
+              <p>Explanation</p> 
+              <p>
+              {question.explanation}</p></div>)}</div>
             </div>
             </div>
             </div>
