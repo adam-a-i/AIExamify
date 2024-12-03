@@ -32,6 +32,16 @@ const QuizPage = ({ quiz }) => {
             </div>
             <div className="question">
             <div className="questionText">
+              <div className="questionHeader">
+            <div className="questionNumber">
+              {
+                currentQuestion + 1
+              }
+              /
+              {
+                quiz.quiz.length
+              }
+            </div>
             <div className='timer-wrapper'>
               <p className='time'>
                 {
@@ -39,6 +49,7 @@ const QuizPage = ({ quiz }) => {
                 }
               </p>
               <Timer/>
+            </div>
             </div>
               <h3>{question.question}</h3>
               <div className="options">

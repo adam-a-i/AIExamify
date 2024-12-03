@@ -115,4 +115,15 @@ hr {
 }
 
 
+.questionNumber{
+  color: rgb(50, 50, 187);
+  font-weight: bolder;
+  font-size: 30px;
+}
+.questionHeader{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
 
