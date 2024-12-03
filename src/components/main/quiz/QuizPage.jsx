@@ -8,6 +8,8 @@ const QuizPage = ({ quiz }) => {
   const [explain, setExplain] = useState(false);
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
   const handleQuestionChange = () =>{
+    setSelectedAnswer(null);
+    setExplain(false);
     if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
   }
 
@@ -69,14 +71,17 @@ const QuizPage = ({ quiz }) => {
                   );
                 })}
                 <hr />
+                { !explain && (<button className='check' onClick={() => checkAnswer()}> Check </button>)}
                 <div className="footer">
-                <button className='check' onClick={() => checkAnswer()}> Check </button>
-              </div>
               {explain && (
                 <div className="explanation">
-              <p>Explanation</p> 
+              <p>Explanation :0 </p> 
               <p>
-              {question.explanation}</p></div>)}</div>
+              {question.explanation}</p>
+              <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
+            )}
+              </div>
+              </div>
             </div>
             </div>
             </div>
