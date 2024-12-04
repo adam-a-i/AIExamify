@@ -6,24 +6,25 @@ const QuizPage = ({ quiz }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [time, setTime] = useState(0);
   const [explain, setExplain] = useState(false);
+  const[isCorrect,setIsCorrect] = useState(null);
+  const[lock,setLock] = useState(false);
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
+  
   const handleQuestionChange = () =>{
+    setLock(false);
+    setIsCorrect(null);
     setSelectedAnswer(null);
     setExplain(false);
     if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
   }
 
   const checkAnswer = () => {
+    setLock(true);
     setExplain(true);
     console.log(selectedAnswer);
     console.log(question.correct_answer);
-    if(question.correct_answer == selectedAnswer){
-      console.log("correct!");
-    }
-    else{
-      console.log("falsdee");
-      
-    }
+    const correct = question.correct_answer === selectedAnswer;
+    setIsCorrect(correct); 
   }
 
   return (
@@ -56,11 +57,21 @@ const QuizPage = ({ quiz }) => {
             </div>
             </div>
               <h3>{question.question}</h3>
-              <div className="options">
+              <div 
+              className={`options ${lock ? 'disabled' : ''}`}
+              >
                 {question.options.map((option, idx) => {
                   return (
-                    <div key={idx} 
-                    className={`option ${selectedAnswer === option ? 'option-selected' : ''}`}
+                    <div key={idx}
+                    className={`option ${
+                      selectedAnswer === option
+                        ? isCorrect === null
+                          ? 'option-selected'
+                          : isCorrect
+                          ? 'option-correct'
+                          : 'option-wrong'
+                        : ''
+                    }`}
                      onClick={() => setSelectedAnswer(option)}>
                       {idx===0 && (<div className='alphabet'>A</div>)}
                       {idx===1 && (<div className='alphabet'>B</div>)} 
@@ -70,19 +81,20 @@ const QuizPage = ({ quiz }) => {
                     </div>
                   );
                 })}
+                </div>
                 <hr />
                 { !explain && (<button className='check' onClick={() => checkAnswer()}> Check </button>)}
                 <div className="footer">
               {explain && (
                 <div className="explanation">
                   <div className="exp">
-              <div>Explanation :0 </div> 
-              <div>
-              {question.explanation}</div></div>
+                  <div>Explanation :0 </div> 
+                  <div>
+                {question.explanation}</div></div>
               <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
             )}
               </div>
-              </div>
+              
             </div>
             </div>
             </div>

@@ -148,3 +148,26 @@ hr {
   padding: 10px; 
   width: 70%; 
 }
+
+
+.option-correct {
+  background-color: #4caf50; /* Green for correct answer */
+  color: white;
+}
+
+.option-wrong {
+  background-color: #f44336; /* Red for incorrect answer */
+  color: white;
+}
+
+.option-wrong:hover{
+  background-color: #ce3c32;
+}
+.option-correct:hover {
+  background-color: #357e37; /* Green for correct answer */
+}
+
+.options.disabled {
+  pointer-events: none; /* Disables all interactions */
+  opacity: 0.6; /* Adds a visual indicator */
+}
