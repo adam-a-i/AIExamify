@@ -100,7 +100,7 @@ useEffect(() => {
               {explain && (
                 <div className="explanation">
                   <div className="exp">
-                  <div className='exp1'>Explanation :0 </div> 
+                  <div className='exp1'>Explanation :) </div> 
                   <div>
                 {question.explanation}</div></div>
               <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
