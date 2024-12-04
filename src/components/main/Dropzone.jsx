@@ -29,9 +29,9 @@ const Dropzone = ({setQuiz}) => {
 
   return (
     <div>
-        <p className='help'>Try it out by uploading a screenshot, photo, or entering your text content below. It even works with handwritten content.</p>
+        
         <div>
-            <div className='upload'  {...getRootProps()}>
+            <div className='upload'  {...getRootProps()}>    
                 <input {...getInputProps()}/>
                 {
                     //interactivity for dragging file into box

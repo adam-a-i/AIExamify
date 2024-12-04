@@ -23,6 +23,7 @@
     "react-dropzone": "^14.3.5",
     "react-router-dom": "^7.0.1",
     "react-spinners": "^0.14.1",
+    "react-timer-hook": "^3.0.8",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

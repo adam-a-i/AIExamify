@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import Timer from '../../../assets/timer';
+import { useStopwatch } from 'react-timer-hook';
+
 const QuizPage = ({ quiz }) => {  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -8,8 +10,11 @@ const QuizPage = ({ quiz }) => {
   const [explain, setExplain] = useState(false);
   const[isCorrect,setIsCorrect] = useState(null);
   const[lock,setLock] = useState(false);
+
+  const { seconds, minutes, reset } = useStopwatch({ autoStart: true });
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
   
+
   const handleQuestionChange = () =>{
     setLock(false);
     setIsCorrect(null);
@@ -26,7 +31,14 @@ const QuizPage = ({ quiz }) => {
     const correct = question.correct_answer === selectedAnswer;
     setIsCorrect(correct); 
   }
+useEffect(() => {
+    const interval = setInterval(() => {
+      setTime((prevTime) => prevTime + 1);
+    }, 1000);
 
+    // Clean up interval on component unmount or when timer stops
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="quiz">
       <div className="logo">
@@ -48,13 +60,13 @@ const QuizPage = ({ quiz }) => {
               }
             </div>
             <div className='timer-wrapper'>
-              <p className='time'>
-                {
-                  time
-                }
-              </p>
-              <Timer/>
+            <div className="timer"><Timer/></div>
+                  <div className='timer-text'>
+                  <span>{String(minutes).padStart(2,'0')}</span>:<span>{String(seconds).padStart(2,'0')}</span>
+                </div>
+                
             </div>
+
             </div>
               <h3>{question.question}</h3>
               <div 
@@ -88,7 +100,7 @@ const QuizPage = ({ quiz }) => {
               {explain && (
                 <div className="explanation">
                   <div className="exp">
-                  <div>Explanation :0 </div> 
+                  <div className='exp1'>Explanation :0 </div> 
                   <div>
                 {question.explanation}</div></div>
               <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
@@ -101,5 +113,5 @@ const QuizPage = ({ quiz }) => {
   );
 };
   
-  export default QuizPage;
+export default QuizPage;
   

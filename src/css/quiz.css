@@ -2,8 +2,8 @@
     box-sizing: border-box; /* Ensures that padding and borders don't affect width calculations */
   }
   .question .child {
-    width: 100%; /* Make child take up full width */
-    height: auto; /* or set a specific height */
+    width: 100%; 
+    height: auto; 
 }
   .question{
     border-radius: 20px;
@@ -28,11 +28,6 @@
 
   }
   
-  .options {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Ensure options div takes full width */
-  }
   
   .option {
     display: flex;
@@ -45,8 +40,8 @@
     border-radius: 18px;
     text-align: start; /* Center the text inside the option */
     color: black;
-    transition-duration: 0.3s;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
   
   .option:hover{
@@ -95,11 +90,14 @@
     background-color: #0d4fdf;;
 }
 
-.timer-wrapper{
+.timer-wrapper {
   display: flex;
-  align-self: flex-end;
-  width: 40px;
+  align-items: center; 
+  justify-content: flex-start; 
+  gap: 10px; 
+  padding-left: 10px; 
 }
+
 .name{
   margin: 20px;
 
@@ -170,4 +168,17 @@ hr {
 .options.disabled {
   pointer-events: none; /* Disables all interactions */
   opacity: 0.6; /* Adds a visual indicator */
+}
+
+.exp1{
+  font-weight: bolder;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.timer-text{
+  color: rgb(50, 50, 187);
+  font-weight: bolder;
+  font-size: 30px;
 }
