@@ -5,6 +5,8 @@ import { useStopwatch } from 'react-timer-hook';
 import { useNavigate } from 'react-router-dom';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
   const navigate = useNavigate();
   const [emptyAnswer, setEmptyAnswer] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -44,9 +46,15 @@ const QuizPage = ({ quiz }) => {
     setExplain(true);
     console.log(selectedAnswer);
     console.log(question.correct_answer);
-
     const correct = question.correct_answer === selectedAnswer;
     setIsCorrect(correct); 
+    if(correct){
+      setCorrectAnswers(correctAnswers + 1);
+    }
+    else{
+      setIncorrectAnswers([...incorrectAnswers, question]);
+      console.log(incorrectAnswers);
+    }
   }
 useEffect(() => {
     const interval = setInterval(() => {
