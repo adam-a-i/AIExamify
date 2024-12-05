@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
   const navigate = useNavigate();
+  const [emptyAnswer, setEmptyAnswer] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [time, setTime] = useState(0);
@@ -18,6 +19,7 @@ const QuizPage = ({ quiz }) => {
   
 
   const handleQuestionChange = () =>{
+    setEmptyAnswer(false);
     setLock(false);
     setIsCorrect(null);
     setSelectedAnswer(null);
@@ -34,10 +36,15 @@ const QuizPage = ({ quiz }) => {
   }
 
   const checkAnswer = () => {
+    if(!selectedAnswer){
+       setEmptyAnswer(true);
+      return;
+  }
     setLock(true);
     setExplain(true);
     console.log(selectedAnswer);
     console.log(question.correct_answer);
+
     const correct = question.correct_answer === selectedAnswer;
     setIsCorrect(correct); 
   }
@@ -105,7 +112,14 @@ useEffect(() => {
                 })}
                 </div>
                 <hr />
-                { !explain && (<button className='check' onClick={() => checkAnswer()}> Check </button>)}
+                { !explain && (<div className="bottom">
+                  {emptyAnswer && (<p className='empty shaking'>Please select a valid choice :&lt; </p>)}
+                  <div className="check-button-wrapper">
+                            <button className="check" onClick={() => checkAnswer()}>
+                              Check
+                            </button>
+                            </div>
+                   </div>)}
                 <div className="footer">
               {explain && (
                 <div className="explanation">

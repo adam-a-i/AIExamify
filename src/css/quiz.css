@@ -84,6 +84,7 @@
     font-size: 15px;
     transition-duration: 0.5s;
     margin-bottom: 10px;
+    align-self: flex-end;
   }
 
   .check:hover, .option-selected:hover{
@@ -181,4 +182,34 @@ hr {
   color: rgb(50, 50, 187);
   font-weight: bolder;
   font-size: 30px;
+}
+
+.empty{
+  color: red;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+.empty.shaking {
+  animation: shake 0.5s ease-in-out;
+  animation-iteration-count: 1;
+}
+.check-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
