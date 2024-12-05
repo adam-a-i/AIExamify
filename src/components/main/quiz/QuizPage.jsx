@@ -5,16 +5,15 @@ import { useStopwatch } from 'react-timer-hook';
 import { useNavigate } from 'react-router-dom';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState(0); // keeps track of corrrect answers
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]);// array to use incorrect answers for yt rec
   const navigate = useNavigate();
-  const [emptyAnswer, setEmptyAnswer] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [time, setTime] = useState(0);
-  const [explain, setExplain] = useState(false);
-  const[isCorrect,setIsCorrect] = useState(null);
-  const[lock,setLock] = useState(false);
+  const [emptyAnswer, setEmptyAnswer] = useState(false); // checks if empty answer
+  const [currentQuestion, setCurrentQuestion] = useState(0); // qs number
+  const [selectedAnswer, setSelectedAnswer] = useState(null); // to show styling for selected opt
+  const [explain, setExplain] = useState(false); // explanation shows
+  const[isCorrect,setIsCorrect] = useState(null);  // correct answer
+  const[lock,setLock] = useState(false); // lock screen after answering
 
   const { seconds, minutes, reset } = useStopwatch({ autoStart: true });
   const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
@@ -33,7 +32,9 @@ const QuizPage = ({ quiz }) => {
           }
     else{
       console.log('hi');
-      navigate('/result');
+      navigate('/result' , {
+        state: {correctAnswers,minutes, seconds},
+      });
     }
   }
 
@@ -56,14 +57,6 @@ const QuizPage = ({ quiz }) => {
       console.log(incorrectAnswers);
     }
   }
-useEffect(() => {
-    const interval = setInterval(() => {
-      setTime((prevTime) => prevTime + 1);
-    }, 1000);
-
-    // Clean up interval on component unmount or when timer stops
-    return () => clearInterval(interval);
-  }, []);
   return (
     <div className="quiz">
       <div className="logo">
