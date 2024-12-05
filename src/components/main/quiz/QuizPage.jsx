@@ -2,8 +2,10 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Timer from '../../../assets/timer';
 import { useStopwatch } from 'react-timer-hook';
-
+import { useNavigate } from 'react-router-dom';
+// implement empty answer error message
 const QuizPage = ({ quiz }) => {  
+  const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [time, setTime] = useState(0);
@@ -20,7 +22,15 @@ const QuizPage = ({ quiz }) => {
     setIsCorrect(null);
     setSelectedAnswer(null);
     setExplain(false);
-    if(currentQuestion <quiz.quiz.length) setCurrentQuestion(currentQuestion+1);
+    if(currentQuestion < quiz.quiz.length - 1){
+            console.log(currentQuestion);
+           setCurrentQuestion(currentQuestion+1)
+           console.log(currentQuestion);
+          }
+    else{
+      console.log('hi');
+      navigate('/result');
+    }
   }
 
   const checkAnswer = () => {
