@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom' // to receeive props from prev page
 const Result = () => {
     const location = useLocation();
     const {correctAnswers, minutes, seconds} = location.state || {};

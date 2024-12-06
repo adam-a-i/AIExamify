@@ -16,22 +16,19 @@ const QuizPage = ({ quiz }) => {
   const[lock,setLock] = useState(false); // lock screen after answering
 
   const { seconds, minutes, reset } = useStopwatch({ autoStart: true });
-  const question = quiz.quiz ? quiz.quiz[currentQuestion] : null;
+  const question = quiz.quiz ? quiz.quiz[currentQuestion] : null; // picks qs based on its number
   
 
-  const handleQuestionChange = () =>{
+  const handleQuestionChange = () =>{ // resets some question properties and decides whether you move to result pg or not
     setEmptyAnswer(false);
     setLock(false);
     setIsCorrect(null);
     setSelectedAnswer(null);
     setExplain(false);
     if(currentQuestion < quiz.quiz.length - 1){
-            console.log(currentQuestion);
            setCurrentQuestion(currentQuestion+1)
-           console.log(currentQuestion);
           }
     else{
-      console.log('hi');
       navigate('/result' , {
         state: {correctAnswers,minutes, seconds},
       });
@@ -40,21 +37,18 @@ const QuizPage = ({ quiz }) => {
 
   const checkAnswer = () => {
     if(!selectedAnswer){
-       setEmptyAnswer(true);
+       setEmptyAnswer(true); // if no answer provided
       return;
   }
     setLock(true);
     setExplain(true);
-    console.log(selectedAnswer);
-    console.log(question.correct_answer);
-    const correct = question.correct_answer === selectedAnswer;
+    const correct = question.correct_answer === selectedAnswer; // returns bool for ans result
     setIsCorrect(correct); 
     if(correct){
-      setCorrectAnswers(correctAnswers + 1);
+      setCorrectAnswers(correctAnswers + 1); // updates correct answer for result pg
     }
-    else{
+    else{ // tracks incorrect qs for yt reccomendation
       setIncorrectAnswers([...incorrectAnswers, question]);
-      console.log(incorrectAnswers);
     }
   }
   return (
@@ -68,7 +62,7 @@ const QuizPage = ({ quiz }) => {
             <div className="question">
             <div className="questionText">
               <div className="questionHeader">
-            <div className="questionNumber">
+            <div className="questionNumber"> 
               {
                 currentQuestion + 1
               }
@@ -88,12 +82,12 @@ const QuizPage = ({ quiz }) => {
             </div>
               <h3>{question.question}</h3>
               <div 
-              className={`options ${lock ? 'disabled' : ''}`}
+              className={`options ${lock ? 'disabled' : ''}`} // changes classname if qs has already been solved and locks
               >
                 {question.options.map((option, idx) => {
                   return (
                     <div key={idx}
-                    className={`option ${
+                    className={`option ${ // does several thngs like higlhigfht selected answer, show red/green for qs result
                       selectedAnswer === option
                         ? isCorrect === null
                           ? 'option-selected'
@@ -113,7 +107,7 @@ const QuizPage = ({ quiz }) => {
                 })}
                 </div>
                 <hr />
-                { !explain && (<div className="bottom">
+                { !explain && (<div className="bottom"> 
                   {emptyAnswer && (<p className='empty shaking'>Please select a valid choice :&lt; </p>)}
                   <div className="check-button-wrapper">
                             <button className="check" onClick={() => checkAnswer()}>
