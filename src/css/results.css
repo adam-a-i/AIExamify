@@ -1,0 +1,42 @@
+.results{
+    background-color: white;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    height: auto;
+}
+
+.advice {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.5;
+    font-weight: bolder;
+  }
+  
+  .advice span {
+    font-weight: bold;
+  }
+  
+  /* Styling for success and failure messages */
+  .advice.success {
+    color: #4CAF50; /* Green for success */
+    font-size: 20px;
+    font-weight: bolder;
+  }
+  
+  .advice.failure {
+    color: #F44336; /* Red for failure */
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+  .circle{
+    width: 80px;
+    height: 80px;
+    color: rgb(204, 6, 204);
+}

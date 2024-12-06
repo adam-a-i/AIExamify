@@ -30,7 +30,7 @@ const QuizPage = ({ quiz }) => {
           }
     else{
       navigate('/result' , {
-        state: {correctAnswers,minutes, seconds},
+        state: {correctAnswers,minutes, seconds, incorrectAnswers},
       });
     }
   }
