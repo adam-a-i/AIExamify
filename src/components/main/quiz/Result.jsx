@@ -33,7 +33,7 @@ const Result = () => {
         Here's how long it took you to complete the quiz
       </div>
         <div className='advice'>
-                    <span>{String(minutes).padStart(2,'0')}</span>:<span>{String(seconds).padStart(2,'0')}</span>
+                    <span>{String(minutes).padStart(2,'0')}:</span><span>{String(seconds).padStart(2,'0')}</span>
         </div>
         {
           ((correctAnswers/incorrectAnswers.length) <= 0.5) ? ( // checks if person failed or not
@@ -42,6 +42,16 @@ const Result = () => {
             <div className='advice success'>Great Job! Keep going 😄</div>
           )
         }
+        <div className="recommendation">
+        <h2>Here are some topics you can review:</h2>
+          <div className='topics'>
+            
+          </div>
+          <h2>Here are some videos that you can watch!</h2>
+          <div className='videos'>
+          
+            </div>
+          </div> 
       </div>
     </>
   )

@@ -41,3 +41,11 @@
     height: 80px;
     color: rgb(204, 6, 204);
 }
+
+.recommendation{
+  align-self: flex-start;
+  margin-left: 50px;
+
+}
+
+
