@@ -48,4 +48,29 @@
 
 }
 
+  .topic {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .topic::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.5s, left 0.5s;
+  }
+
+  .topic:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
 
