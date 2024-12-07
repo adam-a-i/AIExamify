@@ -5,7 +5,7 @@ import Circle from './Circle.jsx'
 
 const Result = () => {
     const location = useLocation();
-    const {correctAnswers, minutes, seconds, incorrectAnswers} = location.state || {};
+    const {rec, correctAnswers, minutes, seconds, incorrectAnswers} = location.state || {};
     const totalAnswers = (correctAnswers || 0) + (incorrectAnswers ? incorrectAnswers.length : 0);
     const percentage = totalAnswers > 0 ? (correctAnswers / totalAnswers) * 100 : 0;
     const [confettiPieces, setConfettiPieces] = useState(300);
@@ -45,11 +45,17 @@ const Result = () => {
         <div className="recommendation">
         <h2>Here are some topics you can review:</h2>
           <div className='topics'>
-            
+            {rec.quiz.topics.map((topic,index) => {
+              return(
+                <div key={index}>
+                  {topic}
+                </div>
+              )
+            })}
           </div>
           <h2>Here are some videos that you can watch!</h2>
           <div className='videos'>
-          
+            {rec.videoQuery}
             </div>
           </div> 
       </div>

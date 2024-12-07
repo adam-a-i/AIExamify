@@ -1,3 +1,4 @@
+
 export const txt = async (quiz, incorrectAnswers) => {
     const quizJson = JSON.stringify(quiz);
     const incorrectAnswersJSON = JSON.stringify(incorrectAnswers);
@@ -8,8 +9,8 @@ export const txt = async (quiz, incorrectAnswers) => {
           body: JSON.stringify({quiz: quizJson, incorrectAnswers: incorrectAnswersJSON}),
         });
         const data = await response.json();
-        console.log('Quiz Output:', data.quiz);
-        setQuiz(data.quiz);
+        console.log('Recommendation Output:', data);
+        return data;
       } catch (error) {
         console.error('error generating recs');
       }

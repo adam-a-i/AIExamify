@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Timer from '../../../assets/timer';
 import { useStopwatch } from 'react-timer-hook';
 import { useNavigate } from 'react-router-dom';
+import { txt } from './recs';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
   const [correctAnswers, setCorrectAnswers] = useState(0); // keeps track of corrrect answers
@@ -29,9 +30,13 @@ const QuizPage = ({ quiz }) => {
            setCurrentQuestion(currentQuestion+1)
           }
     else{
-      navigate('/result' , {
-        state: {correctAnswers,minutes, seconds, incorrectAnswers},
-      });
+      const handleNavigation = async () => {
+        const rec = await txt(quiz.quiz, incorrectAnswers); // sends quiz and incorrect answers to backend for recommendation generation
+        navigate('/result', {
+          state: { rec, correctAnswers, minutes, seconds, incorrectAnswers },
+        });
+      };
+      handleNavigation();
     }
   }
 
