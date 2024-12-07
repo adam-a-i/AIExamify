@@ -96,7 +96,7 @@ app.post('/generate-keywords', async (req, res) => {
       messages: [
         {
           role: 'system',
-          content: `DO NOT PROVIDE ANYTHING ELSE OTHER THAN JSON. You are a quiz generator. Based on the json provided below. Generate JSON with two keys: "topics" and "videoQuery". The "topics" key should contain an array of  3 topics that the user can review based on their quiz results of incorrect answers with using the context of the whole quiz so find a way to balance the topics correctly focusing more on the things the person got wrong. The "videoQuery" key should contain a string that the user can use to search for videos using the youtube API related to the quiz results. Return the output in JSON format NOT STRING with the following structure:
+          content: `yoU MUST return a single json object. DO NOT PROVIDE ANYTHING ELSE OTHER THAN JSON OR ELSE MY WEBSITE WILL BREAK. You are a quiz generator. Based on the json provided below. Generate JSON with two keys: "topics" and "videoQuery". The "topics" key should contain an array of  3 topics that the user can review based on their quiz results of incorrect answers with using the context of the whole quiz so find a way to balance the topics correctly focusing more on the things the person got wrong. The "videoQuery" key should contain a string that the user can use to search for videos using the youtube API related to the quiz results. Return the output in JSON format NOT STRING with the following structure:
           {
             "topics": ["Topic 1", "Topic 2", "Topic 3"]
             ,
