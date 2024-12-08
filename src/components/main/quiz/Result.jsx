@@ -5,7 +5,7 @@ import Circle from './Circle.jsx'
 // ONLY THING LEFT IS TO WORK ON THE VIDEO QUERY AND GENERATE THE FIRST 3 VIDEOS THEN DISPLAY THEM AND MAKE THEM LOOK NICE AND ACCESSIBLE USING CSS
 const Result = () => {
     const location = useLocation();
-    const {rec, correctAnswers, minutes, seconds, incorrectAnswers} = location.state || {};
+    const {videos, rec, correctAnswers, minutes, seconds, incorrectAnswers} = location.state || {};
     const totalAnswers = (correctAnswers || 0) + (incorrectAnswers ? incorrectAnswers.length : 0);
     const percentage = totalAnswers > 0 ? (correctAnswers / totalAnswers) * 100 : 0;
     const [confettiPieces, setConfettiPieces] = useState(300);
@@ -56,17 +56,16 @@ const Result = () => {
           </div>
           <h2>Here are some videos that you can watch!</h2>
           <div className='videos'>
-          <div className='videos'>
-  <iframe 
-    src="https://www.youtube.com/embed/kqtD5dpn9C8" 
-    width="560" 
-    height="315" 
-    frameBorder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowFullScreen>
-  </iframe>
-</div>
+            {videos.items.map((vide,index) => {
+              return(
+                <div key={index} className='video'>
+                  <iframe
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                  />
 
+                  </div>
+              )
+            })}
             </div>
           </div> 
       </div>
