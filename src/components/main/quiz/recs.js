@@ -1,6 +1,6 @@
 const apiKey = import.meta.env.VITE_YOUTUBE_API;
 
-export const txt = async (quiz, incorrectAnswers) => {
+export const txt = async (quiz, incorrectAnswers) => {// generates recommendations for quiz mistake topics
     const quizJson = JSON.stringify(quiz);
     const incorrectAnswersJSON = JSON.stringify(incorrectAnswers);
     try {

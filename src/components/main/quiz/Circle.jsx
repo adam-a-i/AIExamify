@@ -5,7 +5,6 @@ import 'react-circular-progressbar/dist/styles.css';
 const Circle = ({ percentage }) => {
   const [progress, setProgress] = useState(0);
 
-  // Simulate progress over time
   useEffect(() => {
     if (progress < percentage) {
       const interval = setInterval(() => {
@@ -14,11 +13,11 @@ const Circle = ({ percentage }) => {
             clearInterval(interval);
             return percentage;
           }
-          return prev + 1; // Adjust increment speed here (e.g., 1)
+          return prev + 1; // adjust increment speed here (e.g., 1)
         });
       }, 50); // You can adjust the speed by changing the interval time
     
-      return () => clearInterval(interval); // Clear the interval when the component unmounts
+      return () => clearInterval(interval); 
     }
   }, [percentage, progress]);
 
@@ -31,8 +30,8 @@ const Circle = ({ percentage }) => {
           rotation: 0.25,
           strokeLinecap: 'butt',
           textSize: '18px',
-          pathTransitionDuration: 0.4, // Set a smooth duration
-          pathColor: `#bebbfc`, // Adjust the path color
+          pathTransitionDuration: 0.4, // adjust the speed of the progress bar
+          pathColor: `#bebbfc`, 
           textColor: 'black',
           trailColor: '#d6d6d6',
           backgroundColor: '#6a0dad',

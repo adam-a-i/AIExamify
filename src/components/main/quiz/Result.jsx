@@ -60,6 +60,8 @@ const Result = () => {
               return(
                 <div key={index} className='video'>
                   <iframe
+                  title={video.snippet.title}
+
                   src={`https://www.youtube.com/embed/${video.id.videoId}`}// video link to display 
                   />
 

@@ -7,7 +7,7 @@ import { txt, youtubeVideo} from './recs';
 import { BounceLoader } from 'react-spinners';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
-  const[loading, setLoading] = useState(false);
+  const[loading, setLoading] = useState(false);// loading screen for quiz -> result
   const [correctAnswers, setCorrectAnswers] = useState(0); // keeps track of corrrect answers
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);// array to use incorrect answers for yt rec
   const navigate = useNavigate();
