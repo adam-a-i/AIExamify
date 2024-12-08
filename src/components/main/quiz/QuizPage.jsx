@@ -4,8 +4,10 @@ import Timer from '../../../assets/timer';
 import { useStopwatch } from 'react-timer-hook';
 import { useNavigate } from 'react-router-dom';
 import { txt, youtubeVideo} from './recs';
+import { BounceLoader } from 'react-spinners';
 // implement empty answer error message
 const QuizPage = ({ quiz }) => {  
+  const[loading, setLoading] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0); // keeps track of corrrect answers
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);// array to use incorrect answers for yt rec
   const navigate = useNavigate();
@@ -30,13 +32,15 @@ const QuizPage = ({ quiz }) => {
            setCurrentQuestion(currentQuestion+1)
           }
     else{
+      setLoading(true);
       const handleNavigation = async () => {
         const rec = await txt(quiz.quiz, incorrectAnswers); // sends quiz and incorrect answers to backend for recommendation generation
         const videos = await youtubeVideo(rec.quiz.videoQuery); // sends video query to backend for yt rec
-        console.log(videos);
+        setLoading(false);
         navigate('/result', {
           state: { videos, rec, correctAnswers, minutes, seconds, incorrectAnswers },
         });
+        
       };
       handleNavigation();
     }
@@ -57,6 +61,20 @@ const QuizPage = ({ quiz }) => {
     else{ // tracks incorrect qs for yt reccomendation
       setIncorrectAnswers([...incorrectAnswers, question]);
     }
+  }
+
+  if (loading){ // loading while moving to result page
+    return( 
+      <>
+      <div className="loading">
+            <BounceLoader
+              color="#0950ec"
+              speedMultiplier={1.2}
+            />
+          </div>
+          <div className="overlayL" />
+          </>
+    )
   }
   return (
     <div className="quiz">

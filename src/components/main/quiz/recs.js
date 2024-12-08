@@ -17,12 +17,12 @@ export const txt = async (quiz, incorrectAnswers) => {
       }
     }
 
-    export const youtubeVideo = async (videoQuery) => {
+    export const youtubeVideo = async (videoQuery) => { // yt vid reccomendation call
       try {
           const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${encodeURIComponent(videoQuery)}&type=video&part=snippet&maxResults=3`);
           const data = await response.json();
           console.log('Recommendation Output:', data);
-          return data;
+          return data; // json for yt rec
         } catch (error) {
           console.error('error generating videos');
         }

@@ -56,11 +56,11 @@ const Result = () => {
           </div>
           <h2>Here are some videos that you can watch!</h2>
           <div className='videos'>
-            {videos.items.map((vide,index) => {
+            {videos.items.map((video,index) => {
               return(
                 <div key={index} className='video'>
                   <iframe
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`}// video link to display 
                   />
 
                   </div>
