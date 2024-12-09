@@ -9,10 +9,12 @@ import { useNavigate } from 'react-router-dom';
 const Modal = ({fileInfo, closeModal, setQuiz}) => {
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(false);
+    const [qsNumber, setQsNumber] = useState('Auto');
+    const [difficulty, setDifficulty] = useState('Easy');
     const navigate = useNavigate();
     const handleGenerateText = () => {
        setLoading(true);
-      txt(setQuiz, fileInfo, setText, setLoading, navigate); 
+      txt(qsNumber, difficulty, setQuiz, fileInfo, setText, setLoading, navigate); 
     };
 
     if (loading) { //loading screen
@@ -72,7 +74,10 @@ const Modal = ({fileInfo, closeModal, setQuiz}) => {
                 <select 
                 className='dropdown'
                 name="question-number" 
-                id="question-number">
+                id="question-number"
+                value={qsNumber}
+                onChange={(e) => setQsNumber(e.target.value)}
+                >
                     <option value="Auto">Auto</option>
                     <option>5</option>
                     <option>10</option>
@@ -82,7 +87,9 @@ const Modal = ({fileInfo, closeModal, setQuiz}) => {
                 <select 
                 className='dropdown'
                 name="question-difficulty" 
-                id="question-difficulty">
+                id="question-difficulty"
+                value={difficulty}
+                onChange={(e) => setDifficulty(e.target.value)}>
                     <option value="Auto">Easy</option>
                     <option>Medium</option>
                     <option>Hard</option>

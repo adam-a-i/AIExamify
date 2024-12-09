@@ -14,15 +14,17 @@ app.use(express.json());
 const groq = new Groq({ apiKey: process.env.VITE_GROQ_API_KEY });
 
 app.post('/generate-quiz', async (req, res) => {
-  const { inputText } = req.body;
-
+  const { inputText,difficulty, numberOfQs } = req.body;
+  console.log('Request body:', req.body);
   try {
     // Make API request to generate quiz
     const chatCompletion = await groq.chat.completions.create({
       messages: [
         {
           role: 'system',
-          content: `DO NOT PROVIDE ANYTHING ELSE OTHER THAN JSON. You are a quiz generator. Based on the text provided below, please create a quiz with multiple-choice questions. Each question should have 4 options, and one of them should be the correct answer. Additionally, provide an explanation for why the correct answer is correct. Return the output in JSON format NOT STRING with the following structure:
+          content: `Make sure your response is strictly in valid JSON format, with no additional text, explanations, or errors. The JSON should strictly follow this structure and contain only the necessary fields. Any malformed response will cause issues on the website.
+
+Here is the structure you should follow:
 
 {
   "quiz": [
@@ -51,7 +53,12 @@ app.post('/generate-quiz', async (req, res) => {
   ]
 }
 
-TEXT: ${inputText}`
+Your response should contain only the above structure and should be in valid JSON format. Do not add anything else, such as additional text, HTML, or non-JSON elements.
+
+TEXT: ${inputText}
+Quiz difficulty: ${difficulty}
+Number of questions: ${numberOfQs}
+`
 ,
         },
       ],

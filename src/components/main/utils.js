@@ -5,7 +5,7 @@ export function removeImageTags(inputString) {
     return inputString.replace(/<img[^>]*>/g, ''); // This removes all <img> tags and their contents
 }
 
-export const txt = async (setQuiz, fileInfo, setText, setLoading,navigate) => {
+export const txt = async (numberQs, difficultyQuiz, setQuiz, fileInfo, setText, setLoading,navigate) => {
   const file = fileInfo[0];
   if (file) {
     const reader = new FileReader();
@@ -22,7 +22,7 @@ export const txt = async (setQuiz, fileInfo, setText, setLoading,navigate) => {
         const response = await fetch('http://localhost:3000/generate-quiz', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ inputText: pureText }),
+          body: JSON.stringify({ inputText: pureText, numberOfQs: numberQs, difficulty: difficultyQuiz }),
         });
         const data = await response.json();
         console.log('Quiz Output:', data.quiz);
