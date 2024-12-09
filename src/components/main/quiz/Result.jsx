@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom' // to receeive props from prev page
+import { useLocation } from 'react-router-dom' // to receive props from prev page
 import Confetti from 'react-confetti';
 import Circle from './Circle.jsx'
 // ONLY THING LEFT IS TO WORK ON THE VIDEO QUERY AND GENERATE THE FIRST 3 VIDEOS THEN DISPLAY THEM AND MAKE THEM LOOK NICE AND ACCESSIBLE USING CSS
@@ -47,16 +47,17 @@ const Result = () => {
           <div className='topics'>
             {rec.quiz.topics.map((topic,index) => {
                 return(
-                  <div>
-                <div key={index} className='topic'>
-                  • {topic}
-                </div></div>
+                  <>
+                  <div key={index} className='topic'>
+                    • {topic}
+                  </div>
+                  </>
                 )
             })}
           </div>
           <h2>Here are some videos that you can watch!</h2>
           <div className='videos'>
-            {videos.items.map((video,index) => { // mapping through the videos in arary to display them
+            {videos.items.map((video,index) => { // mapping through the videos in array to display them
                 return (
                 <div key={index} className='video'>
                   <iframe

@@ -1,65 +1,63 @@
 body {
     font-family: Quicksand;
-    /* Lightened multi-colored gradient background */
     background: 
       radial-gradient(circle at top left, #fdeff9, #e4d8e7, #eed1e7),
       linear-gradient(135deg, #b4e5fc, #bebbfc, #f8aab9);
-    background-blend-mode: multiply; /* Smoothly merges gradients */
+    background-blend-mode: multiply;
     background-size: cover;
-    height: 140vh;
+    background-attachment: fixed; /* Prevents background from scrolling */
+    min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  body::before {
-    /* Big grid overlay */
+    position: relative; /* For absolute positioning context */
+}
+
+body::before {
     content: '';
-    position: absolute;
+    position: fixed; /* Changed to fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: inherit;
+    height: 100vh;
     background: 
       linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 100px 100px; /* Big grid size */
+    background-size: 100px 100px;
     z-index: 1;
-    pointer-events: none; /* Keeps grid non-interactive */
-  }
-  
-  body::after {
-    /* Small grid inside big grids */
+    pointer-events: none;
+}
+
+body::after {
     content: '';
-    position: absolute;
+    position: fixed; /* Changed to fixed */
     top: 0;
     left: 0;
     width: 100%;
-    height: inherit;
+    height: 100vh;
     background: 
       linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px; /* Small grid size */
+    background-size: 20px 20px;
     z-index: 1;
     pointer-events: none;
-  }
-  
-  .container {
+}
+
+.container {
     position: relative;
     z-index: 2; /* Ensures content is above the grids */
-  }
-  
-  p {
+}
+
+p {
     margin: 0;
-  }
-  
-  button {
+}
+
+button {
     cursor: pointer;
-  }
-  
-  select {
+}
+
+select {
     cursor: pointer;
-  }
-  
-  input, select, button {
+}
+
+input, select, button {
     font-family: Quicksand, sans-serif;
-  }
+}

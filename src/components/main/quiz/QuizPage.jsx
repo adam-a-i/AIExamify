@@ -147,7 +147,9 @@ const QuizPage = ({ quiz }) => {
                   <div className='exp1'>Explanation :) </div> 
                   <div>
                 {question.explanation}</div></div>
-              <button className='check' onClick={() => handleQuestionChange()}> Next </button></div>
+              <button className='check' onClick={() => handleQuestionChange()}>
+              {currentQuestion == quiz.quiz.length - 1 ? (<p>End Quiz</p>):(<p>Next</p>)} {/* changes button text to end quiz when youre on the last question */}
+                 </button></div>
             )}
               </div>
               
