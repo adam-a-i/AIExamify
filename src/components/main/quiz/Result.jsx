@@ -56,17 +56,18 @@ const Result = () => {
           </div>
           <h2>Here are some videos that you can watch!</h2>
           <div className='videos'>
-            {videos.items.map((video,index) => {
-              return(
+            {videos.items.map((video,index) => { // mapping through the videos in arary to display them
+                return (
                 <div key={index} className='video'>
                   <iframe
                   title={video.snippet.title}
-
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}// video link to display 
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`} // inserting video id which can be turned into link to show
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  className='video-frame'
+                  allowFullScreen
                   />
-
-                  </div>
-              )
+                </div>
+                )
             })}
             </div>
           </div> 

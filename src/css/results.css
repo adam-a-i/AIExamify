@@ -75,4 +75,14 @@
     left: 0;
   }
   
+  .video{
+    display: inline-block;
+    margin: 20px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+
+  .video:hover{
+    transform: scale(1.1);
+  }
 
