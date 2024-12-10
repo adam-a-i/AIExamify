@@ -1,8 +1,8 @@
 # AIExamify
 
-AI-powered quiz generator that creates personalized quizzes and provides targeted learning recommendations.
+AI-powered quiz generator that creates personalized quizzes and provides targeted learning recommendations like topics to review and youtube videos to watch!
 
-![AIExamify Demo](./AIExamify_demo.mp4)
+[Watch AIExamify Demo](./AIExamify_demo.mp4)
 
 ## Features
 
@@ -31,26 +31,26 @@ AI-powered quiz generator that creates personalized quizzes and provides targete
 
 1. Clone the repository
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Environment Variables
 
 Create a `.env` file in the root directory and add the following:
 
-\`\`\`bash
+```bash
 VITE_GROQ_API_KEY=your_groq_api_key
 VITE_YOUTUBE_API=your_youtube_api_key
-\`\`\`
+```
 
 ### Running the Application
 
 To start the development server, run:
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 
 
