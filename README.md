@@ -2,7 +2,7 @@
 
 AI-powered quiz generator that creates personalized quizzes and provides targeted learning recommendations.
 
-![AIExamify Demo](./AIExamify%20demo%20.mp4)
+![AIExamify Demo](./AIExamify_demo.mp4)
 
 ## Features
 
@@ -15,9 +15,9 @@ AI-powered quiz generator that creates personalized quizzes and provides targete
 
 ## Tech Stack
 
-- **Frontend**: React.js, CSS3
+- **Frontend**: React.js, CSS
 - **Backend**: Node.js, Express
-- **APIs**: Groq AI, YouTube Data API
+- **APIs**: Groq AI(Llama AI API), YouTube Data API
 - **Build Tool**: Vite
 
 ## Getting Started
