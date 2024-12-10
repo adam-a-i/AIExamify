@@ -22,7 +22,7 @@ app.post('/generate-quiz', async (req, res) => {
       messages: [
         {
           role: 'system',
-          content: `Make sure your response is strictly in valid JSON format, with no additional text, explanations, or errors. The JSON should strictly follow this structure and contain only the necessary fields. Any malformed response will cause issues on the website.
+          content: `You are an AI quiz generator. Make sure your response is strictly in valid JSON format, with no additional text, explanations, or errors. The JSON should strictly follow this structure and contain only the necessary fields. Any malformed response will cause issues on the website.
 
 Here is the structure you should follow:
 
