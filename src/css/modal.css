@@ -20,8 +20,8 @@ body.active-modal {
 }
 
 .overlay {
-    backdrop-filter: blur(8px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(2px); /* Safari support */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(2px); 
     background: rgba(49,49,49,0.8);
     pointer-events: auto;
 }
@@ -45,18 +45,18 @@ body.active-modal {
 
 .headerm{
     padding: 25px;
-    border-bottom: 1px solid #ddd; /* Light gray border */
-    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding-bottom: 10px; /* Space between text and line */
-    margin-bottom: 10px; /* Space below the border */
+    border-bottom: 1px solid #ddd; 
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.1); 
+    padding-bottom: 10px; 
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content:space-between ;
     border-bottom-width: 1px;
 }
 .footerm {
-    border-top: 1px solid #ddd; /* Top border */
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1); /* Shadow for the top */
+    border-top: 1px solid #ddd; 
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,9 +96,9 @@ body.active-modal {
 .file-info {
     margin-bottom: 10px;
     margin-top: 7px;
-    display: flex; /* Put filename and file path on the same line */
-    align-items: center; /* Align them vertically */
-    gap: 5px; /* Optional: Space between "File:" and the path */
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
 }
 
 .filename{
@@ -111,18 +111,17 @@ body.active-modal {
 .dropdown{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 200px;
-    padding: 10px; /* Add padding for inner spacing */
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    background-color: rgba(240, 245, 255, 1); /* Light blue background */
-    color: #344675; /* Text color matching the image */
-    font-size: 16px; /* Font size for readability */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    outline: none; /* Remove focus outline */
-    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: rgba(240, 245, 255, 1);
+    color: #344675;
+    font-size: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    cursor: pointer;
     margin-bottom: 10px;
 }
-
 
 .file-path{
     color: grey;
@@ -154,7 +153,7 @@ body.active-modal {
 }
 
 .cancel:hover{
-    background-color: rgb(204, 202, 202);;
+    background-color: rgb(204, 202, 202);
 }
 
 .create{
@@ -176,5 +175,5 @@ body.active-modal {
 }
 
 .create:hover{
-    background-color: #0d4fdf;;
+    background-color: #0d4fdf;
 }

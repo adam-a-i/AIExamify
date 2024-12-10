@@ -2,7 +2,7 @@ import mammoth from "mammoth";
 import { convert } from "html-to-text";
 import QuizPage from "./quiz/QuizPage";
 export function removeImageTags(inputString) {
-    return inputString.replace(/<img[^>]*>/g, ''); // This removes all <img> tags and their contents
+    return inputString.replace(/<img[^>]*>/g, ''); // this removes all <img> tags and their contents
 }
 
 export const txt = async (numberQs, difficultyQuiz, setQuiz, fileInfo, setText, setLoading,navigate) => {

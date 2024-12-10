@@ -2,9 +2,6 @@ import React, { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import UploadIcon from '../../assets/UploadIcon.jsx'
 import Modal from './Modal.jsx'
-// NEXT WE WANT TO MAKE IT SO THAT WE UPLOAD A FILE
-// THEN WE TAKE THIS FILE AND EXTRACT THE TEXT FROM IT USING A LIBRARY
-//THEN WE PASS THIS FILE THROUGH AN API
 const Dropzone = ({setQuiz}) => {
     const [fileInfo, setFileInfo] = useState(null);
     const [FileAccept, setFileAccept] = useState(false);
@@ -20,10 +17,10 @@ const Dropzone = ({setQuiz}) => {
     const {getRootProps, getInputProps, isDragAccept, isDragReject} = useDropzone({onDrop,
         multiple: false, //so user cannot upload multiple files, takes latest
         accept: {
-            'audio/mpeg': ['.mp3'],   // For MP3 files
-            'application/pdf': ['.pdf'], // For PDFs
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'], // For DOCX
-            'application/vnd.openxmlformats-officedocument.presentationml.presentation': ['.pptx'], // For PPTX
+            'audio/mpeg': ['.mp3'],   
+            'application/pdf': ['.pdf'], 
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'], 
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation': ['.pptx'], 
           }
     })
 

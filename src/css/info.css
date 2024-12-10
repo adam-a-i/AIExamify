@@ -9,9 +9,9 @@
     font-size: 50px;
     color: rgb(36, 36, 112);
     display: inline-block;
-    background: linear-gradient(135deg, #0e74db, #2519a3, #ad3d3d); /* Darker version of the gradient */
-    -webkit-background-clip: text; /* Clip the gradient to the text */
-    color: transparent; /* Make the text transparent to show only the gradient */
+    background: linear-gradient(135deg, #0e74db, #2519a3, #ad3d3d); 
+    -webkit-background-clip: text; 
+    color: transparent; 
     font-family: "Playfair", serif;
 }
 
@@ -32,18 +32,17 @@
     overflow: hidden;
 }
 
-/* Optional: Use a media query to increase the card's size at larger screens */
 @media (min-width: 768px) {
     .card {
-        max-width: 500px; /* Increase max-width on larger screens */
-        height: 180px; /* Optionally increase height for bigger screens */
+        max-width: 500px; 
+        height: 180px; 
     }
 }
 
 @media (min-width: 1024px) {
     .card {
-        max-width: 600px; /* Further increase max-width on even larger screens */
-        height: 200px; /* Adjust height again for larger screens */
+        max-width: 600px; 
+        height: 200px; 
     }
 }
 .step{
@@ -82,18 +81,18 @@
 }
 @media (max-width: 768px) {
     .short-description {
-        font-size: 40px; /* Reduce font size for smaller screens */
+        font-size: 40px; 
     }
 
     .title {
-        font-size: 18px; /* Adjust title size */
+        font-size: 18px; 
     }
 
     .explanation {
-        font-size: 14px; /* Adjust explanation size */
+        font-size: 14px; 
     }
 
     .card {
-        max-width: 300px; /* Ensure the card does not overflow */
+        max-width: 300px; 
     }
 }

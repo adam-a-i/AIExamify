@@ -5,15 +5,15 @@ body {
       linear-gradient(135deg, #b4e5fc, #bebbfc, #f8aab9);
     background-blend-mode: multiply;
     background-size: cover;
-    background-attachment: fixed; /* Prevents background from scrolling */
+    background-attachment: fixed; /* prevents background from scrolling */
     min-height: 100vh;
     margin: 0;
-    position: relative; /* For absolute positioning context */
+    position: relative; /* for absolute positioning context */
 }
 
 body::before {
     content: '';
-    position: fixed; /* Changed to fixed */
+    position: fixed; /* changed to fixed */
     top: 0;
     left: 0;
     width: 100%;
@@ -28,7 +28,7 @@ body::before {
 
 body::after {
     content: '';
-    position: fixed; /* Changed to fixed */
+    position: fixed; /* changed to fixed */
     top: 0;
     left: 0;
     width: 100%;
@@ -43,7 +43,7 @@ body::after {
 
 .container {
     position: relative;
-    z-index: 2; /* Ensures content is above the grids */
+    z-index: 2; /* ensures content is above the grids */
 }
 
 p {

@@ -15,7 +15,7 @@ const Circle = ({ percentage }) => {
           }
           return prev + 1; // adjust increment speed here (e.g., 1)
         });
-      }, 50); // You can adjust the speed by changing the interval time
+      }, 50); // you can adjust the speed by changing the interval time
     
       return () => clearInterval(interval); 
     }

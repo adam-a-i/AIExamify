@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box; /* Ensures that padding and borders don't affect width calculations */
+    box-sizing: border-box; 
   }
   .question .child {
     width: 100%; 
@@ -33,12 +33,12 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 100%; /* Ensure each option fills the parent container */
-    padding: 15px; /* Increase padding for better spacing */
-    margin: 5px 0; /* Adjust margin for spacing */
+    width: 100%; 
+    padding: 15px; 
+    margin: 5px 0; 
     background-color: rgb(168, 191, 235);
     border-radius: 18px;
-    text-align: start; /* Center the text inside the option */
+    text-align: start; 
     color: black;
     cursor: pointer;
     transition: all 0.3s ease;

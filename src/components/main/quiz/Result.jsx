@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom' // to receive props from prev page
 import Confetti from 'react-confetti';
 import Circle from './Circle.jsx'
-// ONLY THING LEFT IS TO WORK ON THE VIDEO QUERY AND GENERATE THE FIRST 3 VIDEOS THEN DISPLAY THEM AND MAKE THEM LOOK NICE AND ACCESSIBLE USING CSS
 const Result = () => {
     const location = useLocation();
     const {videos, rec, correctAnswers, minutes, seconds, incorrectAnswers} = location.state || {};
