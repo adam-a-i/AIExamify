@@ -2,7 +2,10 @@
 
 AI-powered quiz generator that creates personalized quizzes and provides targeted learning recommendations like topics to review and youtube videos to watch!
 
-[Watch AIExamify Demo](./AIExamify_demo.mp4)
+# Watch AIExamify Demo
+
+https://github.com/user-attachments/assets/7852d104-fd0d-473c-bee7-89a304526154
+
 
 ## Features
 
