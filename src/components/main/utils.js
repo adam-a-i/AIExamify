@@ -34,7 +34,7 @@ export const txt = async (numberQs, difficultyQuiz, setQuiz, fileInfo, setText, 
           setTimeout(()=>{
             setLoading(false);
             navigate('/quiz');//navigating to quiz page after the 9 seconds complete
-          }, 2000)
+          }, 5000)
 
       }
     };
