@@ -55,5 +55,9 @@ To start the development server, run:
 npm run dev
 ```
 
+To start the backend server go to the backend directory, run:
+```bash
+node apiPrompt.js
+```
 
 
